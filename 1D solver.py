@@ -13,7 +13,7 @@ xmin = -5
 L = xmax - xmin
 x = np.linspace(xmin, xmax, N)
 #for N even
-C = (0.5*(3.14*N/L)**2)/m
+C = (0.5*(math.pi*N/L)**2)/m
 #number of eigenvalues
 n_eigs = 5
 #potential function
@@ -34,7 +34,7 @@ if N%2 == 0:
     for i in range(N):
         for j in range(N):
 	        if j !=i:
-                    H[i,j] = C*2*((-1)**(i-j))/(N**2*math.sin(3.14*(i-j)/N)*math.sin(3.14*(i-j))/N)
+                    H[i,j] = C*2*((-1)**(i-j))/(N**2*math.sin(math.pi*(i-j)/N)*math.sin(math.pi*(i-j))/N)
     for i in range(N):
         H[i,i]=C*(1+2/N**2)/3
 
@@ -42,7 +42,7 @@ if N%2 == 1:
     for i in range(N):
         for j in range(N):
             if j!= i:
-                H[i,j] = C*2*((-1)**(i-j)) * math.cos(3.14*(i-j)/N)/(N**2*math.sin(3.14*(i-j)/N)*math.sin(3.14*(i-j)/N))
+                H[i,j] = C*2*((-1)**(i-j)) * math.cos(math.pi*(i-j)/N)/(N**2*math.sin(math.pi*(i-j)/N)*math.sin(math.pi*(i-j)/N))
     for i in range(N):
         H[i,i] = C*(1-1/N**2)/3
 
